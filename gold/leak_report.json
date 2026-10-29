@@ -1,0 +1,717 @@
+{
+  "_meta": {
+    "note": "★ 候选 marker × 轴库词表、子串级相交 ★"
+  },
+  "topics": {
+    "T1": {
+      "prompt": "你如何看待高考英语作文？",
+      "axes": [
+        {
+          "id": "T1-A1",
+          "name": "应试导向与真实能力导向的冲突",
+          "candidates": [
+            "千篇一律",
+            "背范文",
+            "套话",
+            "中考",
+            "应试"
+          ],
+          "generic_first_draft": [
+            "模板",
+            "套路",
+            "应试"
+          ],
+          "collisions": {
+            "套话": [
+              "v3_slots",
+              "v3_axis_picker"
+            ]
+          },
+          "markers": [
+            "千篇一律",
+            "背范文",
+            "中考"
+          ],
+          "n_clean": 4,
+          "primary": true
+        },
+        {
+          "id": "T1-A2",
+          "name": "评分机制与真实写作能力的脱节",
+          "candidates": [
+            "阅卷老师",
+            "评分标准",
+            "打分标准",
+            "压分",
+            "考试院"
+          ],
+          "generic_first_draft": [
+            "评分",
+            "阅卷",
+            "标准"
+          ],
+          "collisions": {},
+          "markers": [
+            "阅卷老师",
+            "评分标准",
+            "打分标准"
+          ],
+          "n_clean": 5,
+          "primary": true
+        },
+        {
+          "id": "T1-A3",
+          "name": "英语作为工具的实际价值",
+          "candidates": [
+            "原版",
+            "技术资料",
+            "论文",
+            "看原版",
+            "语料"
+          ],
+          "generic_first_draft": [
+            "工具",
+            "文献",
+            "交流"
+          ],
+          "collisions": {
+            "原版": [
+              "v3_axis_picker"
+            ]
+          },
+          "markers": [
+            "技术资料",
+            "论文",
+            "看原版"
+          ],
+          "n_clean": 4,
+          "primary": true
+        },
+        {
+          "id": "T1-A4",
+          "name": "教育公平与资源差异",
+          "candidates": [
+            "寒门",
+            "城乡",
+            "差距",
+            "农村",
+            "生源"
+          ],
+          "generic_first_draft": [
+            "公平",
+            "城乡",
+            "资源"
+          ],
+          "collisions": {
+            "差距": [
+              "v3_slots"
+            ]
+          },
+          "markers": [
+            "寒门",
+            "城乡",
+            "农村"
+          ],
+          "n_clean": 4,
+          "primary": true
+        },
+        {
+          "id": "T1-A5",
+          "name": "写作能力本身的迁移价值",
+          "candidates": [
+            "表达力",
+            "逻辑",
+            "迁移",
+            "语感",
+            "组织"
+          ],
+          "generic_first_draft": [
+            "写作能力",
+            "思维",
+            "迁移"
+          ],
+          "collisions": {
+            "组织": [
+              "v1_path_recipes",
+              "v1_skill",
+              "v3_slots",
+              "v3_axis_picker"
+            ]
+          },
+          "markers": [
+            "表达力",
+            "逻辑",
+            "迁移"
+          ],
+          "n_clean": 4,
+          "primary": true
+        },
+        {
+          "id": "T1-A6",
+          "name": "机器批改与 AI 带来的变数",
+          "candidates": [
+            "批改",
+            "算法",
+            "自动评分",
+            "AI",
+            "误判"
+          ],
+          "generic_first_draft": [
+            "机器",
+            "批改",
+            "人工智能"
+          ],
+          "collisions": {
+            "AI": [
+              "v1_fork",
+              "v3_fork"
+            ]
+          },
+          "markers": [
+            "批改",
+            "算法",
+            "自动评分"
+          ],
+          "n_clean": 4,
+          "primary": true
+        }
+      ],
+      "n_primary_axes": 6,
+      "n_aux_axes": 0
+    },
+    "T2": {
+      "prompt": "你如何看待腐败现象？",
+      "axes": [
+        {
+          "id": "T2-A1",
+          "name": "制度设计与权力制衡",
+          "candidates": [
+            "制衡",
+            "一把手",
+            "审批",
+            "权力清单",
+            "留痕"
+          ],
+          "generic_first_draft": [
+            "制度",
+            "制衡",
+            "权力"
+          ],
+          "collisions": {
+            "审批": [
+              "v3_axis_picker"
+            ],
+            "留痕": [
+              "v3_axis_picker"
+            ]
+          },
+          "markers": [
+            "制衡",
+            "一把手",
+            "权力清单"
+          ],
+          "n_clean": 3,
+          "primary": true
+        },
+        {
+          "id": "T2-A2",
+          "name": "监督与问责",
+          "candidates": [
+            "举报",
+            "巡视",
+            "纪检",
+            "审计",
+            "公开栏"
+          ],
+          "generic_first_draft": [
+            "监督",
+            "问责",
+            "透明"
+          ],
+          "collisions": {
+            "审计": [
+              "v1_sig",
+              "v1_skill",
+              "v3_merge",
+              "v3_sig",
+              "v3_skill",
+              "v3_axis_picker"
+            ]
+          },
+          "markers": [
+            "举报",
+            "巡视",
+            "纪检"
+          ],
+          "n_clean": 4,
+          "primary": true
+        },
+        {
+          "id": "T2-A3",
+          "name": "激励机制与利益结构",
+          "candidates": [
+            "寻租",
+            "利益输送",
+            "回扣",
+            "分红",
+            "围标"
+          ],
+          "generic_first_draft": [
+            "激励",
+            "利益",
+            "寻租"
+          ],
+          "collisions": {},
+          "markers": [
+            "寻租",
+            "利益输送",
+            "回扣"
+          ],
+          "n_clean": 5,
+          "primary": true
+        },
+        {
+          "id": "T2-A4",
+          "name": "文化传统与社会风气",
+          "candidates": [
+            "风气",
+            "潜规则",
+            "人情",
+            "酒桌",
+            "上行下效"
+          ],
+          "generic_first_draft": [
+            "文化",
+            "风气",
+            "传统"
+          ],
+          "collisions": {},
+          "markers": [
+            "风气",
+            "潜规则",
+            "人情"
+          ],
+          "n_clean": 5,
+          "primary": true
+        },
+        {
+          "id": "T2-A5",
+          "name": "经济根源与分配失衡",
+          "candidates": [
+            "贫富",
+            "垄断",
+            "寻利",
+            "挤占",
+            "机会不均"
+          ],
+          "generic_first_draft": [
+            "经济",
+            "分配",
+            "失衡"
+          ],
+          "collisions": {},
+          "markers": [
+            "贫富",
+            "垄断",
+            "寻利"
+          ],
+          "n_clean": 5,
+          "primary": true
+        },
+        {
+          "id": "T2-A6",
+          "name": "个人自律与道德底线",
+          "candidates": [
+            "底线",
+            "自律",
+            "洁癖",
+            "滑坡",
+            "第一口"
+          ],
+          "generic_first_draft": [
+            "自律",
+            "道德",
+            "底线"
+          ],
+          "collisions": {},
+          "markers": [
+            "底线",
+            "自律",
+            "洁癖"
+          ],
+          "n_clean": 5,
+          "primary": true
+        }
+      ],
+      "n_primary_axes": 6,
+      "n_aux_axes": 0
+    },
+    "T3": {
+      "prompt": "你如何看待“如果断了电，还是得靠人而不是 AI”这一观点？",
+      "axes": [
+        {
+          "id": "T3-A1",
+          "name": "物理依赖与 AI 的能力边界",
+          "candidates": [
+            "断电",
+            "电网",
+            "发电",
+            "机房",
+            "断网"
+          ],
+          "generic_first_draft": [
+            "断电",
+            "依赖",
+            "边界"
+          ],
+          "collisions": {},
+          "markers": [
+            "断电",
+            "电网",
+            "发电"
+          ],
+          "n_clean": 5,
+          "primary": true
+        },
+        {
+          "id": "T3-A2",
+          "name": "人的不可替代性（现场判断/协作）",
+          "candidates": [
+            "现场",
+            "救火",
+            "临时判断",
+            "换位",
+            "手写"
+          ],
+          "generic_first_draft": [
+            "不可替代",
+            "现场",
+            "判断"
+          ],
+          "collisions": {
+            "现场": [
+              "v1_path_recipes",
+              "v1_sig",
+              "v3_path_recipes"
+            ],
+            "手写": [
+              "v3_axis_picker"
+            ]
+          },
+          "markers": [
+            "救火",
+            "临时判断",
+            "换位"
+          ],
+          "n_clean": 3,
+          "primary": true
+        },
+        {
+          "id": "T3-A3",
+          "name": "过度依赖导致能力退化",
+          "candidates": [
+            "退化",
+            "懒",
+            "空白",
+            "丢手艺",
+            "温水"
+          ],
+          "generic_first_draft": [
+            "退化",
+            "过度依赖",
+            "依赖"
+          ],
+          "collisions": {
+            "退化": [
+              "v3_slots",
+              "v3_skill",
+              "v3_axis_picker"
+            ]
+          },
+          "markers": [
+            "懒",
+            "空白",
+            "丢手艺"
+          ],
+          "n_clean": 4,
+          "primary": true
+        },
+        {
+          "id": "T3-A4",
+          "name": "冗余与应急预案",
+          "candidates": [
+            "预案",
+            "演练",
+            "手电",
+            "发报机",
+            "备用"
+          ],
+          "generic_first_draft": [
+            "冗余",
+            "备用",
+            "预案"
+          ],
+          "collisions": {
+            "备用": [
+              "v3_axis_picker"
+            ]
+          },
+          "markers": [
+            "预案",
+            "演练",
+            "手电"
+          ],
+          "n_clean": 4,
+          "primary": true
+        },
+        {
+          "id": "T3-A5",
+          "name": "“靠人”本身的不靠谱",
+          "candidates": [
+            "靠人",
+            "人也会",
+            "不可靠",
+            "甩锅",
+            "总有人不在"
+          ],
+          "generic_first_draft": [
+            "靠人",
+            "人也会",
+            "不可靠"
+          ],
+          "collisions": {},
+          "markers": [
+            "靠人",
+            "人也会",
+            "不可靠"
+          ],
+          "n_clean": 5,
+          "primary": true
+        },
+        {
+          "id": "T3-A6",
+          "name": "应急能力建设与长期准备",
+          "candidates": [
+            "应急",
+            "演练",
+            "常态化",
+            "平时",
+            "储备"
+          ],
+          "generic_first_draft": [
+            "应急",
+            "长期",
+            "训练"
+          ],
+          "collisions": {
+            "应急": [
+              "v3_axis_picker"
+            ],
+            "平时": [
+              "v3_slots"
+            ]
+          },
+          "markers": [
+            "演练",
+            "常态化",
+            "储备"
+          ],
+          "n_clean": 3,
+          "primary": true
+        }
+      ],
+      "n_primary_axes": 6,
+      "n_aux_axes": 0
+    },
+    "T4": {
+      "prompt": "你如何看待“问题的解决能力是 AI 时代最重要的能力之一”这一观点？",
+      "axes": [
+        {
+          "id": "T4-A1",
+          "name": "问题定义与诊断（先找对问题）",
+          "candidates": [
+            "找对问题",
+            "问对问题",
+            "定义清楚",
+            "症状",
+            "病因"
+          ],
+          "generic_first_draft": [
+            "定义",
+            "诊断",
+            "找对问题"
+          ],
+          "collisions": {
+            "症状": [
+              "v1_absence"
+            ]
+          },
+          "markers": [
+            "找对问题",
+            "问对问题",
+            "定义清楚"
+          ],
+          "n_clean": 4,
+          "primary": true
+        },
+        {
+          "id": "T4-A2",
+          "name": "拆解与假设验证",
+          "candidates": [
+            "假设",
+            "证伪",
+            "拆成",
+            "试错",
+            "小步"
+          ],
+          "generic_first_draft": [
+            "拆解",
+            "验证",
+            "假设"
+          ],
+          "collisions": {
+            "试错": [
+              "v3_axis_picker"
+            ],
+            "小步": [
+              "v3_axis_picker"
+            ]
+          },
+          "markers": [
+            "假设",
+            "证伪",
+            "拆成"
+          ],
+          "n_clean": 3,
+          "primary": true
+        },
+        {
+          "id": "T4-A3",
+          "name": "AI/工具作为能力放大器",
+          "candidates": [
+            "放大",
+            "杠杆",
+            "省力",
+            "帮手",
+            "效率"
+          ],
+          "generic_first_draft": [
+            "放大器",
+            "杠杆",
+            "工具"
+          ],
+          "collisions": {
+            "放大": [
+              "v3_axis_picker"
+            ],
+            "杠杆": [
+              "v3_skill"
+            ],
+            "效率": [
+              "v1_path_recipes",
+              "v3_path_recipes",
+              "v3_axis_picker"
+            ]
+          },
+          "markers": [
+            "省力",
+            "帮手"
+          ],
+          "n_clean": 2,
+          "primary": true
+        },
+        {
+          "id": "T4-A4",
+          "name": "协作与跨域",
+          "candidates": [
+            "协作",
+            "跨领域",
+            "组队",
+            "同行",
+            "外部专家"
+          ],
+          "generic_first_draft": [
+            "协作",
+            "跨领域",
+            "团队"
+          ],
+          "collisions": {
+            "同行": [
+              "v3_axis_picker"
+            ]
+          },
+          "markers": [
+            "协作",
+            "跨领域",
+            "组队"
+          ],
+          "n_clean": 4,
+          "primary": true
+        },
+        {
+          "id": "T4-A5",
+          "name": "学习迁移与元能力",
+          "candidates": [
+            "迁移",
+            "举一反三",
+            "自学",
+            "复盘",
+            "学会学"
+          ],
+          "generic_first_draft": [
+            "迁移",
+            "学习",
+            "元能力"
+          ],
+          "collisions": {},
+          "markers": [
+            "迁移",
+            "举一反三",
+            "自学"
+          ],
+          "n_clean": 5,
+          "primary": true
+        },
+        {
+          "id": "T4-A6",
+          "name": "不确定条件下的取舍判断",
+          "candidates": [
+            "取舍",
+            "权衡",
+            "赌",
+            "两难",
+            "止损"
+          ],
+          "generic_first_draft": [
+            "取舍",
+            "不确定",
+            "判断"
+          ],
+          "collisions": {
+            "取舍": [
+              "v1_merge",
+              "v3_merge",
+              "v3_skill"
+            ],
+            "权衡": [
+              "v1_v2notes"
+            ],
+            "止损": [
+              "v1_path_recipes",
+              "v3_path_recipes",
+              "v3_axis_picker"
+            ]
+          },
+          "markers": [
+            "赌",
+            "两难"
+          ],
+          "n_clean": 2,
+          "primary": true
+        }
+      ],
+      "n_primary_axes": 6,
+      "n_aux_axes": 0
+    }
+  }
+}
