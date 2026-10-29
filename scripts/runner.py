@@ -67,16 +67,24 @@ def strip_think(t):
 
 
 def api_call(messages, temperature, max_tokens, timeout=240):
+    # ★ 【推理必须关掉】★ ——★ 实测（2026-10-29）：★ M3 的推理 token 会【随机暴涨】（★ 同一题 439 ↔ 2998 ★），
+    #   ★ max_tokens 给小了 ⇒ finish_reason=length、★ 正文【一个字都没有】★ ——★ 而【HTTP 200、★ usage 正常】★
+    #   ★ ⇒ 【整批静默作废】。★ 关掉后 reasoning_tokens=0、★ 确定性高、★ 也不用剥 <think>。★★
+    #   ★ ⚠️ 绝不能用 reasoning_split:true（★ 实测：推理暴涨到 7995、★ 正文 0 字 ★）★★
     body = json.dumps({"model": MODEL, "messages": messages,
-                       "temperature": temperature, "max_tokens": max_tokens}).encode("utf-8")
+                       "temperature": temperature, "max_tokens": max_tokens,
+                       "thinking": {"type": "disabled"}}).encode("utf-8")
     req = urllib.request.Request(
         API, data=body, method="POST",
         headers={"Authorization": "Bearer %s" % os.environ["MINIMAX_SUBSCRIPTION_KEY"],
                  "Content-Type": "application/json"})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         d = json.loads(r.read().decode("utf-8"))
-    txt = d["choices"][0]["message"].get("content") or ""
-    return strip_think(txt), d.get("usage", {}) or {}
+    ch = d["choices"][0]
+    txt = ch.get("message", {}).get("content") or ""
+    usage = d.get("usage", {}) or {}
+    usage["_finish_reason"] = ch.get("finish_reason")
+    return strip_think(txt), usage
 
 
 def log_call(rec):
@@ -84,7 +92,7 @@ def log_call(rec):
         f.write(json.dumps(rec, ensure_ascii=False) + "\n")
 
 
-def call(arm, topic, rep, stage, messages, temperature=0.7, max_tokens=3000, tries=3):
+def call(arm, topic, rep, stage, messages, temperature=0.7, max_tokens=4500, tries=3):
     """★ 单次 API 调用 ＋ 落盘 ＋ 重试（★ 同一提示、★ 不换 seed、不改内容 ★）"""
     cid = "%s__%s__r%d__%s" % (arm, topic, rep, stage)
     for attempt in range(1, tries + 1):
@@ -167,31 +175,131 @@ def prompt_ax(arm, gold, tid):
             {"role": "user", "content": task + "\n\n题目：%s" % topic_prompt(gold, tid)}]
 
 
-def parse_axes(txt):
-    """★ 宽容解析（★ 模型侧 schema 违规是常态 ★）＋ 不足就【不算数】、★ 不补造 ★"""
+def _stray_quote_combos(raw):
+    """★ 枚举「删掉紧贴括号的多余引号」的所有组合（★ 确定性、★ 不动内容 ★）"""
+    import itertools
+    pos = [i for i, ch in enumerate(raw) if ch == '"' and i + 1 < len(raw) and raw[i + 1] in "}]"]
+    if not pos or len(pos) > 8:
+        return []
+    out = []
+    for r in range(1, len(pos) + 1):
+        for combo in itertools.combinations(pos, r):
+            b = list(raw)
+            for i in reversed(combo):
+                del b[i]
+            out.append("".join(b))
+    return out
+
+
+def _repair_json(raw):
+    """★ 栈式就地修复（★ 只动结构字符、★ 一个字内容都不改 ★）"""
+    out, stack = [], []
+    ins = esc = False
+    for ch in raw:
+        if esc:
+            out.append(ch); esc = False; continue
+        if ch == "\\":
+            out.append(ch); esc = True; continue
+        if ch == '"':
+            ins = not ins; out.append(ch); continue
+        if ins:
+            out.append(ch); continue
+        if ch in "{[":
+            stack.append(ch); out.append(ch); continue
+        if ch in "}]":
+            want = "{" if ch == "}" else "["
+            while stack and stack[-1] != want:
+                top = stack.pop()
+                out.append("]" if top == "[" else "}")
+            if stack:
+                stack.pop()
+            out.append(ch); continue
+        out.append(ch)
+    while stack:
+        out.append("]" if stack.pop() == "[" else "}")
+    return "".join(out)
+
+
+def _salvage(txt):
+    """★ 确定性结构修复（★ 只补括号/引号、★ **绝不造内容** ★）
+
+    ★ 为什么要有（★ 实测 2026-10-29 ★）：★ 模型输出的 JSON **少一个右括号**（★
+      `"sign_neg":["只归咎个人品德"}` ★）——★ 模型侧 schema 违规是常态。★★
+    ★ 这不是「补造」：★ 修复只动【结构字符】、★ 轴名/做法/代价/签名一个字都不改 ★
+    """
     m = re.search(r"\{.*\}", txt, re.S)
     if not m:
         return None
+    raw = m.group(0)
     try:
-        d = json.loads(m.group(0))
+        return json.loads(raw)
     except Exception:
-        # ★ 退而求其次：抓第一个 {...} 平衡括号块 ★
-        i = txt.find("{")
-        depth = 0
-        for j in range(i, len(txt)):
-            if txt[j] == "{":
-                depth += 1
-            elif txt[j] == "}":
-                depth -= 1
-                if depth == 0:
-                    try:
-                        d = json.loads(txt[i:j + 1])
-                    except Exception:
-                        return None
-                    break
-        else:
-            return None
-    axes = d.get("axes")
+        pass
+    try:
+        return json.loads(_repair_json(raw))
+    except Exception:
+        pass
+    # ★ 第二类缺陷（★ 实测 2026-10-29 ★）：★ 模型在 `]` 之后【多写了一个 `"`】★
+    #   ⇒ `"sign_neg":["空泛道德批判"]"}` ⇒ 未闭合的字符串 ★
+    #   ⇒ 修法：★ 枚举【紧贴 `}` / `]` 的多余引号】删掉再试（★ 组合很少、★ 确定、★ 不动任何内容 ★）★★
+    for combo in _stray_quote_combos(raw):
+        try:
+            return json.loads(combo)
+        except Exception:
+            continue
+    objs = []
+    for om in re.finditer(r"\{[^{}]*\}", raw):
+        frag = om.group(0)
+        d = None
+        for cand in [frag] + [_repair_json(frag)] + _stray_quote_combos(frag):
+            try:
+                d = json.loads(cand)
+                break
+            except Exception:
+                continue
+        if d is None:
+            continue
+        if isinstance(d, dict):
+            objs.append(d)
+    return {"axes": objs} if objs else None
+
+
+def parse_axes(txt):
+    """★ 宽容解析（★ 模型侧 schema 违规是常态 ★）★
+
+    ★ 三层：① 直接 json.loads ② 平衡括号块 ③ 【确定性结构修复】★
+    ★ ★ 绝不补造内容：★ 修复只动结构字符、★ 轴名/做法/代价/签名一个字都不改 ★★
+    """
+    if not txt:
+        return None
+    d = None
+    m = re.search(r"\{.*\}", txt, re.S)
+    if m:
+        try:
+            d = json.loads(m.group(0))
+        except Exception:
+            d = None
+    if d is None:
+        # ★ ② 抓第一个平衡括号块 ★
+        i0 = txt.find("{")
+        if i0 >= 0:
+            depth = 0
+            for j0 in range(i0, len(txt)):
+                if txt[j0] == "{":
+                    depth += 1
+                elif txt[j0] == "}":
+                    depth -= 1
+                    if depth == 0:
+                        try:
+                            d = json.loads(txt[i0:j0 + 1])
+                        except Exception:
+                            d = None
+                        break
+    axes = (d or {}).get("axes") if isinstance(d, dict) else None
+    if not isinstance(axes, list) or not axes:
+        # ★ ③ 确定性结构修复（★ 只动结构、★ 不造内容 ★）★★
+        d2 = _salvage(txt)
+        axes = (d2 or {}).get("axes") if isinstance(d2, dict) else None
     if not isinstance(axes, list) or not axes:
         return None
     out = []
@@ -250,16 +358,16 @@ def run_arm_unit(arm, gold, tid, rep):
     t0 = time.time()
     if arm in ("B0", "B1"):
         msgs = prompt_b0(gold, tid) if arm == "B0" else prompt_b1(gold, tid)
-        txt, rec = call(arm, tid, rep, "final", msgs, max_tokens=3000)
+        txt, rec = call(arm, tid, rep, "final", msgs, max_tokens=4500)
         return {"arm": arm, "topic": tid, "rep": rep, "ok": bool(txt), "final_chars": len(txt),
                 "stages": ["final"], "wall_s": round(time.time() - t0, 1), "n_calls": 1}
 
     # ★ 选轴 ★
-    ax_txt, ax_rec = call(arm, tid, rep, "axes", prompt_ax(arm, gold, tid), max_tokens=2000)
+    ax_txt, ax_rec = call(arm, tid, rep, "axes", prompt_ax(arm, gold, tid), max_tokens=2500)
     axes = parse_axes(ax_txt) if ax_txt else None
     if not axes:
         # ★ 再试一次（★ 同一提示、★ 不改内容 ★）★★
-        ax_txt2, _ = call(arm, tid, rep, "axes_retry", prompt_ax(arm, gold, tid), max_tokens=2000)
+        ax_txt2, _ = call(arm, tid, rep, "axes_retry", prompt_ax(arm, gold, tid), max_tokens=2500)
         axes = parse_axes(ax_txt2) if ax_txt2 else None
     if not axes:
         return {"arm": arm, "topic": tid, "rep": rep, "ok": False, "fail": "axes_parse_failed",
@@ -272,20 +380,20 @@ def run_arm_unit(arm, gold, tid, rep):
     branches = []
     with cf.ThreadPoolExecutor(max_workers=N_BRANCH) as ex:
         futs = [ex.submit(call, arm, tid, rep, "branch%d" % (k + 1),
-                          prompt_branch(arm, gold, tid, axes[k], k + 1), max_tokens=3000)
+                          prompt_branch(arm, gold, tid, axes[k], k + 1), max_tokens=4500)
                 for k in range(N_BRANCH)]
         for f in futs:
             b, _ = f.result()
             branches.append(b)
     if not all(branches):
         return {"arm": arm, "topic": tid, "rep": rep, "ok": False, "fail": "branch_failed",
-                "stages": ["axes", "branch"], "wall_s": round(time.time() - t0, 1), "n_calls": 3 + N_BRANCH}
+                "stages": ["axes", "branch"], "wall_s": round(time.time() - t0, 1), "n_calls": 2 + N_BRANCH}
 
     # ★ 合流 ★
-    mg, _ = call(arm, tid, rep, "merge", prompt_merge(arm, gold, tid, branches, axes), max_tokens=4000)
+    mg, _ = call(arm, tid, rep, "merge", prompt_merge(arm, gold, tid, branches, axes), max_tokens=5000)
     if not mg:
         return {"arm": arm, "topic": tid, "rep": rep, "ok": False, "fail": "merge_failed",
-                "stages": ["axes", "branch", "merge"], "wall_s": round(time.time() - t0, 1), "n_calls": 5 + N_BRANCH}
+                "stages": ["axes", "branch", "merge"], "wall_s": round(time.time() - t0, 1), "n_calls": 2 + N_BRANCH}
     return {"arm": arm, "topic": tid, "rep": rep, "ok": True, "final_chars": len(mg),
             "n_axes": len(axes), "axes_names": [a["name"] for a in axes],
             "stages": ["axes", "branch", "merge"], "wall_s": round(time.time() - t0, 1),

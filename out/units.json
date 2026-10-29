@@ -1,0 +1,1047 @@
+[
+  {
+    "arm": "B0",
+    "topic": "T2",
+    "rep": 1,
+    "ok": true,
+    "final_chars": 1613,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 17.5,
+    "n_calls": 1
+  },
+  {
+    "arm": "B0",
+    "topic": "T2",
+    "rep": 3,
+    "ok": true,
+    "final_chars": 1936,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 18.1,
+    "n_calls": 1
+  },
+  {
+    "arm": "B0",
+    "topic": "T2",
+    "rep": 2,
+    "ok": true,
+    "final_chars": 1774,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 20.0,
+    "n_calls": 1
+  },
+  {
+    "arm": "B0",
+    "topic": "T1",
+    "rep": 3,
+    "ok": true,
+    "final_chars": 1851,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 21.9,
+    "n_calls": 1
+  },
+  {
+    "arm": "B0",
+    "topic": "T1",
+    "rep": 1,
+    "ok": true,
+    "final_chars": 2283,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 24.6,
+    "n_calls": 1
+  },
+  {
+    "arm": "B0",
+    "topic": "T1",
+    "rep": 2,
+    "ok": true,
+    "final_chars": 2268,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 26.1,
+    "n_calls": 1
+  },
+  {
+    "arm": "B0",
+    "topic": "T3",
+    "rep": 3,
+    "ok": true,
+    "final_chars": 1337,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 16.1,
+    "n_calls": 1
+  },
+  {
+    "arm": "B0",
+    "topic": "T3",
+    "rep": 2,
+    "ok": true,
+    "final_chars": 1597,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 19.4,
+    "n_calls": 1
+  },
+  {
+    "arm": "B0",
+    "topic": "T3",
+    "rep": 1,
+    "ok": true,
+    "final_chars": 2068,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 23.1,
+    "n_calls": 1
+  },
+  {
+    "arm": "B0",
+    "topic": "T4",
+    "rep": 3,
+    "ok": true,
+    "final_chars": 1577,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 16.1,
+    "n_calls": 1
+  },
+  {
+    "arm": "B0",
+    "topic": "T4",
+    "rep": 1,
+    "ok": true,
+    "final_chars": 1900,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 20.5,
+    "n_calls": 1
+  },
+  {
+    "arm": "B0",
+    "topic": "T4",
+    "rep": 2,
+    "ok": true,
+    "final_chars": 1941,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 19.9,
+    "n_calls": 1
+  },
+  {
+    "arm": "B1",
+    "topic": "T1",
+    "rep": 3,
+    "ok": true,
+    "final_chars": 1564,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 17.1,
+    "n_calls": 1
+  },
+  {
+    "arm": "B1",
+    "topic": "T2",
+    "rep": 2,
+    "ok": true,
+    "final_chars": 1524,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 15.9,
+    "n_calls": 1
+  },
+  {
+    "arm": "B1",
+    "topic": "T2",
+    "rep": 3,
+    "ok": true,
+    "final_chars": 1423,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 14.4,
+    "n_calls": 1
+  },
+  {
+    "arm": "B1",
+    "topic": "T2",
+    "rep": 1,
+    "ok": true,
+    "final_chars": 1820,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 19.7,
+    "n_calls": 1
+  },
+  {
+    "arm": "B1",
+    "topic": "T1",
+    "rep": 2,
+    "ok": true,
+    "final_chars": 2287,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 25.1,
+    "n_calls": 1
+  },
+  {
+    "arm": "B1",
+    "topic": "T1",
+    "rep": 1,
+    "ok": true,
+    "final_chars": 2679,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 29.7,
+    "n_calls": 1
+  },
+  {
+    "arm": "B1",
+    "topic": "T3",
+    "rep": 1,
+    "ok": true,
+    "final_chars": 1883,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 21.9,
+    "n_calls": 1
+  },
+  {
+    "arm": "B1",
+    "topic": "T3",
+    "rep": 2,
+    "ok": true,
+    "final_chars": 1890,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 21.6,
+    "n_calls": 1
+  },
+  {
+    "arm": "B1",
+    "topic": "T3",
+    "rep": 3,
+    "ok": true,
+    "final_chars": 2002,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 23.9,
+    "n_calls": 1
+  },
+  {
+    "arm": "B1",
+    "topic": "T4",
+    "rep": 3,
+    "ok": true,
+    "final_chars": 1546,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 18.0,
+    "n_calls": 1
+  },
+  {
+    "arm": "B1",
+    "topic": "T4",
+    "rep": 1,
+    "ok": true,
+    "final_chars": 2082,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 23.1,
+    "n_calls": 1
+  },
+  {
+    "arm": "B1",
+    "topic": "T4",
+    "rep": 2,
+    "ok": true,
+    "final_chars": 2163,
+    "stages": [
+      "final"
+    ],
+    "wall_s": 25.3,
+    "n_calls": 1
+  },
+  {
+    "arm": "A1",
+    "topic": "T2",
+    "rep": 2,
+    "ok": true,
+    "final_chars": 5257,
+    "n_axes": 4,
+    "axes_names": [
+      "制度约束轴",
+      "利益博弈轴",
+      "权力监督轴",
+      "社会规范轴"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 66.4,
+    "n_calls": 9,
+    "_note": "★ 解析器修复后补跑（★ 复用原轴输出 ★）"
+  },
+  {
+    "arm": "A1",
+    "topic": "T1",
+    "rep": 1,
+    "ok": true,
+    "final_chars": 3039,
+    "n_axes": 4,
+    "axes_names": [
+      "能力导向",
+      "真实情境",
+      "思辨深度",
+      "过程改进"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 62.1,
+    "n_calls": 9
+  },
+  {
+    "arm": "A1",
+    "topic": "T1",
+    "rep": 3,
+    "ok": true,
+    "final_chars": 4040,
+    "n_axes": 4,
+    "axes_names": [
+      "能力评价轴",
+      "教改反馈轴",
+      "题型载体轴",
+      "压力异化轴"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 61.6,
+    "n_calls": 9
+  },
+  {
+    "arm": "A1",
+    "topic": "T2",
+    "rep": 1,
+    "ok": true,
+    "final_chars": 4709,
+    "n_axes": 4,
+    "axes_names": [
+      "制度约束轴",
+      "利益驱动轴",
+      "公共监督轴",
+      "历史演变轴"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 68.6,
+    "n_calls": 9
+  },
+  {
+    "arm": "A1",
+    "topic": "T1",
+    "rep": 2,
+    "ok": true,
+    "final_chars": 5999,
+    "n_axes": 4,
+    "axes_names": [
+      "能力导向",
+      "选拔功能",
+      "教学反馈",
+      "文化表达"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 74.2,
+    "n_calls": 9
+  },
+  {
+    "arm": "A1",
+    "topic": "T2",
+    "rep": 3,
+    "ok": true,
+    "final_chars": 5006,
+    "n_axes": 4,
+    "axes_names": [
+      "权力约束",
+      "利益寻租",
+      "监督公开",
+      "吏治激励"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 67.3,
+    "n_calls": 9
+  },
+  {
+    "arm": "A1",
+    "topic": "T3",
+    "rep": 1,
+    "ok": true,
+    "final_chars": 3741,
+    "n_axes": 4,
+    "axes_names": [
+      "故障降级",
+      "责任归属",
+      "能力备份",
+      "人机边界"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 72.7,
+    "n_calls": 9
+  },
+  {
+    "arm": "A1",
+    "topic": "T3",
+    "rep": 2,
+    "ok": true,
+    "final_chars": 4089,
+    "n_axes": 4,
+    "axes_names": [
+      "失效兜底轴",
+      "任务分级轴",
+      "基础设施轴",
+      "权责边界轴"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 60.9,
+    "n_calls": 9
+  },
+  {
+    "arm": "A1",
+    "topic": "T4",
+    "rep": 2,
+    "ok": true,
+    "final_chars": 2845,
+    "n_axes": 4,
+    "axes_names": [
+      "问题界定能力",
+      "人机协作分工",
+      "问题类型边界",
+      "验证与纠错能力"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 55.4,
+    "n_calls": 9
+  },
+  {
+    "arm": "A1",
+    "topic": "T4",
+    "rep": 1,
+    "ok": true,
+    "final_chars": 5403,
+    "n_axes": 4,
+    "axes_names": [
+      "问题界定能力",
+      "任务闭环能力",
+      "人机责任边界",
+      "知识迁移能力"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 57.7,
+    "n_calls": 9
+  },
+  {
+    "arm": "A1",
+    "topic": "T4",
+    "rep": 3,
+    "ok": true,
+    "final_chars": 3948,
+    "n_axes": 4,
+    "axes_names": [
+      "问题界定",
+      "结果闭环",
+      "人机协作",
+      "认知基础"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 66.6,
+    "n_calls": 9
+  },
+  {
+    "arm": "A2",
+    "topic": "T1",
+    "rep": 1,
+    "ok": true,
+    "final_chars": 4488,
+    "n_axes": 4,
+    "axes_names": [
+      "能力真实效用",
+      "公平评价",
+      "长期学习效用",
+      "改进评价方式"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 58.8,
+    "n_calls": 9
+  },
+  {
+    "arm": "A1",
+    "topic": "T3",
+    "rep": 3,
+    "ok": true,
+    "final_chars": 6665,
+    "n_axes": 4,
+    "axes_names": [
+      "断电失效边界",
+      "人工剩余环节",
+      "电力依赖差异",
+      "责任与风险"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 87.8,
+    "n_calls": 9
+  },
+  {
+    "arm": "A2",
+    "topic": "T1",
+    "rep": 2,
+    "ok": true,
+    "final_chars": 2959,
+    "n_axes": 4,
+    "axes_names": [
+      "能力导向",
+      "公平底线",
+      "考试功能",
+      "文化语境"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 60.6,
+    "n_calls": 9
+  },
+  {
+    "arm": "A2",
+    "topic": "T3",
+    "rep": 1,
+    "ok": true,
+    "final_chars": 2541,
+    "n_axes": 4,
+    "axes_names": [
+      "任务性质轴",
+      "失效风险轴",
+      "目标差异轴",
+      "功能边界轴"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 43.9,
+    "n_calls": 9
+  },
+  {
+    "arm": "A2",
+    "topic": "T2",
+    "rep": 2,
+    "ok": true,
+    "final_chars": 3442,
+    "n_axes": 4,
+    "axes_names": [
+      "制度约束",
+      "利益驱动",
+      "权利救济",
+      "历史生成"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 57.8,
+    "n_calls": 9
+  },
+  {
+    "arm": "A2",
+    "topic": "T2",
+    "rep": 1,
+    "ok": true,
+    "final_chars": 4486,
+    "n_axes": 4,
+    "axes_names": [
+      "制度约束",
+      "经济根源",
+      "文化伦理",
+      "个体责任"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 72.4,
+    "n_calls": 9
+  },
+  {
+    "arm": "A2",
+    "topic": "T1",
+    "rep": 3,
+    "ok": true,
+    "final_chars": 4523,
+    "n_axes": 4,
+    "axes_names": [
+      "能力导向",
+      "公平视角",
+      "评分效度",
+      "育人边界"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 75.3,
+    "n_calls": 9
+  },
+  {
+    "arm": "A2",
+    "topic": "T2",
+    "rep": 3,
+    "ok": true,
+    "final_chars": 2936,
+    "n_axes": 4,
+    "axes_names": [
+      "制度约束",
+      "利益驱动",
+      "公开监督",
+      "文化土壤"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 69.6,
+    "n_calls": 9
+  },
+  {
+    "arm": "A2",
+    "topic": "T3",
+    "rep": 2,
+    "ok": true,
+    "final_chars": 1756,
+    "n_axes": 4,
+    "axes_names": [
+      "功能依赖",
+      "失效兜底",
+      "边界条件",
+      "组织能力"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 49.5,
+    "n_calls": 9
+  },
+  {
+    "arm": "A2",
+    "topic": "T3",
+    "rep": 3,
+    "ok": true,
+    "final_chars": 2682,
+    "n_axes": 4,
+    "axes_names": [
+      "失效边界",
+      "人工兜底",
+      "可靠性论证",
+      "能力互补"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 44.1,
+    "n_calls": 9
+  },
+  {
+    "arm": "A2",
+    "topic": "T4",
+    "rep": 2,
+    "ok": true,
+    "final_chars": 2846,
+    "n_axes": 4,
+    "axes_names": [
+      "问题定义能力",
+      "因果诊断能力",
+      "人机协作能力",
+      "边界判断能力"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 46.5,
+    "n_calls": 9
+  },
+  {
+    "arm": "A2",
+    "topic": "T4",
+    "rep": 1,
+    "ok": true,
+    "final_chars": 4224,
+    "n_axes": 4,
+    "axes_names": [
+      "问题定义能力",
+      "因果验证能力",
+      "人机协作能力",
+      "结果负责能力"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 58.3,
+    "n_calls": 9
+  },
+  {
+    "arm": "A3",
+    "topic": "T1",
+    "rep": 1,
+    "ok": true,
+    "final_chars": 3349,
+    "n_axes": 4,
+    "axes_names": [
+      "语言能力导向",
+      "思维表达导向",
+      "任务沟通导向",
+      "公平测量导向"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 54.8,
+    "n_calls": 9
+  },
+  {
+    "arm": "A2",
+    "topic": "T4",
+    "rep": 3,
+    "ok": true,
+    "final_chars": 3807,
+    "n_axes": 4,
+    "axes_names": [
+      "问题界定能力",
+      "工具编排能力",
+      "情境适配能力",
+      "责任承担能力"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 72.1,
+    "n_calls": 9
+  },
+  {
+    "arm": "A3",
+    "topic": "T1",
+    "rep": 2,
+    "ok": true,
+    "final_chars": 3557,
+    "n_axes": 4,
+    "axes_names": [
+      "能力导向",
+      "教学影响",
+      "公平代价",
+      "指标局限"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 63.8,
+    "n_calls": 9
+  },
+  {
+    "arm": "A3",
+    "topic": "T2",
+    "rep": 1,
+    "ok": true,
+    "final_chars": 3163,
+    "n_axes": 4,
+    "axes_names": [
+      "制度约束",
+      "利益驱动",
+      "道德自律",
+      "社会土壤"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 55.6,
+    "n_calls": 9
+  },
+  {
+    "arm": "A3",
+    "topic": "T1",
+    "rep": 3,
+    "ok": true,
+    "final_chars": 4017,
+    "n_axes": 4,
+    "axes_names": [
+      "能力导向",
+      "素养导向",
+      "公平导向",
+      "评价改革"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 71.6,
+    "n_calls": 9
+  },
+  {
+    "arm": "A3",
+    "topic": "T2",
+    "rep": 3,
+    "ok": true,
+    "final_chars": 3456,
+    "n_axes": 4,
+    "axes_names": [
+      "制度约束",
+      "激励扭曲",
+      "公开透明",
+      "文化伦理"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 58.7,
+    "n_calls": 9
+  },
+  {
+    "arm": "A3",
+    "topic": "T3",
+    "rep": 1,
+    "ok": true,
+    "final_chars": 3010,
+    "n_axes": 4,
+    "axes_names": [
+      "系统韧性",
+      "能力边界",
+      "组织责任",
+      "人机协作"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 66.8,
+    "n_calls": 9
+  },
+  {
+    "arm": "A3",
+    "topic": "T3",
+    "rep": 3,
+    "ok": true,
+    "final_chars": 2362,
+    "n_axes": 4,
+    "axes_names": [
+      "失效兜底",
+      "能力分工",
+      "安全底线",
+      "运行韧性"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 46.3,
+    "n_calls": 9
+  },
+  {
+    "arm": "A3",
+    "topic": "T4",
+    "rep": 1,
+    "ok": true,
+    "final_chars": 2594,
+    "n_axes": 4,
+    "axes_names": [
+      "问题定义能力",
+      "人机协作求解",
+      "元认知纠偏",
+      "情境化实践"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 51.1,
+    "n_calls": 9
+  },
+  {
+    "arm": "A3",
+    "topic": "T2",
+    "rep": 2,
+    "ok": true,
+    "final_chars": 4660,
+    "n_axes": 4,
+    "axes_names": [
+      "制度约束",
+      "经济根源",
+      "文化伦理",
+      "个案追责"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 106.9,
+    "n_calls": 9
+  },
+  {
+    "arm": "A3",
+    "topic": "T4",
+    "rep": 2,
+    "ok": true,
+    "final_chars": 1811,
+    "n_axes": 4,
+    "axes_names": [
+      "问题定义能力",
+      "因果诊断能力",
+      "行动闭环能力",
+      "边界责任能力"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 37.2,
+    "n_calls": 9
+  },
+  {
+    "arm": "A3",
+    "topic": "T3",
+    "rep": 2,
+    "ok": true,
+    "final_chars": 3854,
+    "n_axes": 4,
+    "axes_names": [
+      "失效边界",
+      "韧性冗余",
+      "责任归属",
+      "低阶兜底"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 79.9,
+    "n_calls": 9
+  },
+  {
+    "arm": "A3",
+    "topic": "T4",
+    "rep": 3,
+    "ok": true,
+    "final_chars": 2222,
+    "n_axes": 4,
+    "axes_names": [
+      "问题定义能力",
+      "边界判断能力",
+      "因果诊断能力",
+      "反馈迭代能力"
+    ],
+    "stages": [
+      "axes",
+      "branch",
+      "merge"
+    ],
+    "wall_s": 56.4,
+    "n_calls": 9
+  }
+]

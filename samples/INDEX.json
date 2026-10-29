@@ -1,0 +1,284 @@
+[
+  {
+    "topic": "T1",
+    "prompt": "你如何看待高考英语作文？",
+    "arm": "B0",
+    "arm_name": "直调 LLM",
+    "file": "B0__T1__r1.md",
+    "chars": 2208,
+    "cov": 0.333,
+    "hits": [
+      "T1-A2",
+      "T1-A5"
+    ]
+  },
+  {
+    "topic": "T1",
+    "prompt": "你如何看待高考英语作文？",
+    "arm": "B1",
+    "arm_name": "一句话多角度",
+    "file": "B1__T1__r1.md",
+    "chars": 2648,
+    "cov": 0.5,
+    "hits": [
+      "T1-A1",
+      "T1-A3",
+      "T1-A5"
+    ]
+  },
+  {
+    "topic": "T1",
+    "prompt": "你如何看待高考英语作文？",
+    "arm": "A1",
+    "arm_name": "thinking-surface v1.1",
+    "file": "A1__T1__r1.md",
+    "chars": 2871,
+    "cov": 0.5,
+    "hits": [
+      "T1-A1",
+      "T1-A3",
+      "T1-A5"
+    ]
+  },
+  {
+    "topic": "T1",
+    "prompt": "你如何看待高考英语作文？",
+    "arm": "A2",
+    "arm_name": "thinking-surface-v3",
+    "file": "A2__T1__r1.md",
+    "chars": 4282,
+    "cov": 0.333,
+    "hits": [
+      "T1-A2",
+      "T1-A5"
+    ]
+  },
+  {
+    "topic": "T1",
+    "prompt": "你如何看待高考英语作文？",
+    "arm": "A3",
+    "arm_name": "v3（签名不注入）",
+    "file": "A3__T1__r1.md",
+    "chars": 3119,
+    "cov": 0.333,
+    "hits": [
+      "T1-A2",
+      "T1-A5"
+    ]
+  },
+  {
+    "topic": "T2",
+    "prompt": "你如何看待腐败现象？",
+    "arm": "B0",
+    "arm_name": "直调 LLM",
+    "file": "B0__T2__r1.md",
+    "chars": 1597,
+    "cov": 0.667,
+    "hits": [
+      "T2-A1",
+      "T2-A2",
+      "T2-A3",
+      "T2-A6"
+    ]
+  },
+  {
+    "topic": "T2",
+    "prompt": "你如何看待腐败现象？",
+    "arm": "B1",
+    "arm_name": "一句话多角度",
+    "file": "B1__T2__r1.md",
+    "chars": 1805,
+    "cov": 0.5,
+    "hits": [
+      "T2-A2",
+      "T2-A3",
+      "T2-A4"
+    ]
+  },
+  {
+    "topic": "T2",
+    "prompt": "你如何看待腐败现象？",
+    "arm": "A1",
+    "arm_name": "thinking-surface v1.1",
+    "file": "A1__T2__r1.md",
+    "chars": 4406,
+    "cov": 0.667,
+    "hits": [
+      "T2-A1",
+      "T2-A2",
+      "T2-A3",
+      "T2-A5"
+    ]
+  },
+  {
+    "topic": "T2",
+    "prompt": "你如何看待腐败现象？",
+    "arm": "A2",
+    "arm_name": "thinking-surface-v3",
+    "file": "A2__T2__r1.md",
+    "chars": 4240,
+    "cov": 0.5,
+    "hits": [
+      "T2-A2",
+      "T2-A3",
+      "T2-A4"
+    ]
+  },
+  {
+    "topic": "T2",
+    "prompt": "你如何看待腐败现象？",
+    "arm": "A3",
+    "arm_name": "v3（签名不注入）",
+    "file": "A3__T2__r1.md",
+    "chars": 3038,
+    "cov": 1.0,
+    "hits": [
+      "T2-A1",
+      "T2-A2",
+      "T2-A3",
+      "T2-A4",
+      "T2-A5",
+      "T2-A6"
+    ]
+  },
+  {
+    "topic": "T3",
+    "prompt": "你如何看待“如果断了电，还是得靠人而不是 AI”这一观点？",
+    "arm": "B0",
+    "arm_name": "直调 LLM",
+    "file": "B0__T3__r1.md",
+    "chars": 2044,
+    "cov": 0.5,
+    "hits": [
+      "T3-A1",
+      "T3-A4",
+      "T3-A5"
+    ]
+  },
+  {
+    "topic": "T3",
+    "prompt": "你如何看待“如果断了电，还是得靠人而不是 AI”这一观点？",
+    "arm": "B1",
+    "arm_name": "一句话多角度",
+    "file": "B1__T3__r1.md",
+    "chars": 1820,
+    "cov": 0.667,
+    "hits": [
+      "T3-A1",
+      "T3-A4",
+      "T3-A5",
+      "T3-A6"
+    ]
+  },
+  {
+    "topic": "T3",
+    "prompt": "你如何看待“如果断了电，还是得靠人而不是 AI”这一观点？",
+    "arm": "A1",
+    "arm_name": "thinking-surface v1.1",
+    "file": "A1__T3__r1.md",
+    "chars": 3436,
+    "cov": 0.667,
+    "hits": [
+      "T3-A1",
+      "T3-A4",
+      "T3-A5",
+      "T3-A6"
+    ]
+  },
+  {
+    "topic": "T3",
+    "prompt": "你如何看待“如果断了电，还是得靠人而不是 AI”这一观点？",
+    "arm": "A2",
+    "arm_name": "thinking-surface-v3",
+    "file": "A2__T3__r1.md",
+    "chars": 2305,
+    "cov": 0.667,
+    "hits": [
+      "T3-A1",
+      "T3-A4",
+      "T3-A5",
+      "T3-A6"
+    ]
+  },
+  {
+    "topic": "T3",
+    "prompt": "你如何看待“如果断了电，还是得靠人而不是 AI”这一观点？",
+    "arm": "A3",
+    "arm_name": "v3（签名不注入）",
+    "file": "A3__T3__r1.md",
+    "chars": 2715,
+    "cov": 0.667,
+    "hits": [
+      "T3-A1",
+      "T3-A4",
+      "T3-A5",
+      "T3-A6"
+    ]
+  },
+  {
+    "topic": "T4",
+    "prompt": "你如何看待“问题的解决能力是 AI 时代最重要的能力之一”这一观点？",
+    "arm": "B0",
+    "arm_name": "直调 LLM",
+    "file": "B0__T4__r1.md",
+    "chars": 1850,
+    "cov": 0.333,
+    "hits": [
+      "T4-A2",
+      "T4-A4"
+    ]
+  },
+  {
+    "topic": "T4",
+    "prompt": "你如何看待“问题的解决能力是 AI 时代最重要的能力之一”这一观点？",
+    "arm": "B1",
+    "arm_name": "一句话多角度",
+    "file": "B1__T4__r1.md",
+    "chars": 2008,
+    "cov": 0.333,
+    "hits": [
+      "T4-A2",
+      "T4-A4"
+    ]
+  },
+  {
+    "topic": "T4",
+    "prompt": "你如何看待“问题的解决能力是 AI 时代最重要的能力之一”这一观点？",
+    "arm": "A1",
+    "arm_name": "thinking-surface v1.1",
+    "file": "A1__T4__r1.md",
+    "chars": 5037,
+    "cov": 0.333,
+    "hits": [
+      "T4-A4",
+      "T4-A5"
+    ]
+  },
+  {
+    "topic": "T4",
+    "prompt": "你如何看待“问题的解决能力是 AI 时代最重要的能力之一”这一观点？",
+    "arm": "A2",
+    "arm_name": "thinking-surface-v3",
+    "file": "A2__T4__r1.md",
+    "chars": 3935,
+    "cov": 0.5,
+    "hits": [
+      "T4-A1",
+      "T4-A2",
+      "T4-A4"
+    ]
+  },
+  {
+    "topic": "T4",
+    "prompt": "你如何看待“问题的解决能力是 AI 时代最重要的能力之一”这一观点？",
+    "arm": "A3",
+    "arm_name": "v3（签名不注入）",
+    "file": "A3__T4__r1.md",
+    "chars": 2419,
+    "cov": 0.333,
+    "hits": [
+      "T4-A2",
+      "T4-A4"
+    ]
+  }
+]
